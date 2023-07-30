@@ -5,7 +5,7 @@ signal loss(level)
 var timeSlow : bool
 var level : int
 var isLoss : bool
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if timeSlow:
 		Engine.time_scale = .5
 	else:
