@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://f3bl4ga4cxgm"]
+
+[ext_resource type="PackedScene" uid="uid://dep06dmrlgfmg" path="res://Scenes/Goal.tscn" id="1_g3mvh"]
+[ext_resource type="PackedScene" uid="uid://c41o0je01sgtf" path="res://Scenes/player.tscn" id="2_0yac6"]
+[ext_resource type="PackedScene" uid="uid://dk5kstiruxbk3" path="res://Scenes/Ball.tscn" id="3_hqi6k"]
+[ext_resource type="PackedScene" uid="uid://chru36v72yjx2" path="res://Scenes/Countdown.tscn" id="4_3oewv"]
+[ext_resource type="PackedScene" uid="uid://chara52by4iby" path="res://Scenes/Tilemap.tscn" id="5_wbehq"]
+
+[node name="Level4" type="Node2D"]
+
+[node name="Goal" parent="." instance=ExtResource("1_g3mvh")]
+position = Vector2(25, 488)
+
+[node name="Player" parent="." instance=ExtResource("2_0yac6")]
+position = Vector2(485, 23)
+
+[node name="Ball" parent="." instance=ExtResource("3_hqi6k")]
+position = Vector2(378, 472)
+
+[node name="Countdown" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Countdown" parent="Countdown" instance=ExtResource("4_3oewv")]
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -2
+
+[node name="Tilemap" parent="CanvasLayer" instance=ExtResource("5_wbehq")]
+z_index = -2
+layer_0/z_index = -2

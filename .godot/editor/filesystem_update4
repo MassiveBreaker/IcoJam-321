@@ -1,0 +1,15 @@
+res://Scenes/Main.tscn
+res://Scenes/player.tscn
+res://Scenes/PauseScreen.tscn
+res://Scenes/Levels/Level1.tscn
+res://Scenes/Tilemap.tscn
+res://Scenes/Goal.tscn
+res://Scenes/Countdown.tscn
+res://Scripts/Countdown.gd
+res://Scripts/Handler.gd
+res://Scripts/Main.gd
+res://Scenes/Levels/Level2.tscn
+res://Scenes/Levels/Level3.tscn
+res://Scripts/PauseScreen.gd
+res://Scenes/Levels/Level4.tscn
+res://Scripts/player.gd

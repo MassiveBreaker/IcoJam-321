@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://chru36v72yjx2"]
+
+[ext_resource type="FontFile" uid="uid://dadu0nxhmkk18" path="res://Assets/Fonts/StickyNumbers.ttf" id="1_fgnla"]
+[ext_resource type="Script" path="res://Scripts/Countdown.gd" id="1_o8t8i"]
+[ext_resource type="AudioStream" uid="uid://c01gmjjxyoxqt" path="res://Assets/Sounds/Countdown/Three.wav" id="3_hkrfc"]
+[ext_resource type="AudioStream" uid="uid://ovr41vtbheip" path="res://Assets/Sounds/Countdown/Two.wav" id="4_e4d7d"]
+[ext_resource type="AudioStream" uid="uid://cx7r5177htj1n" path="res://Assets/Sounds/Countdown/One.wav" id="5_j01lb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_45dw8"]
+font = ExtResource("1_fgnla")
+font_size = 100
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Countdown" type="Control"]
+process_mode = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o8t8i")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "3
+2
+1
+..."
+label_settings = SubResource("LabelSettings_45dw8")
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 9
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="Three" type="Timer" parent="Timers"]
+one_shot = true
+
+[node name="Two" type="Timer" parent="Timers"]
+one_shot = true
+
+[node name="One" type="Timer" parent="Timers"]
+one_shot = true
+
+[node name="LittleTimer" type="Timer" parent="Timers"]
+wait_time = 0.5
+one_shot = true
+
+[node name="Sound" type="Node" parent="."]
+
+[node name="Three" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource("3_hkrfc")
+
+[node name="Two" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource("4_e4d7d")
+
+[node name="One" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource("5_j01lb")
+
+[connection signal="timeout" from="Timers/Three" to="." method="_on_three_timeout"]
+[connection signal="timeout" from="Timers/Two" to="." method="_on_two_timeout"]
+[connection signal="timeout" from="Timers/One" to="." method="_on_one_timeout"]
+[connection signal="timeout" from="Timers/LittleTimer" to="." method="_on_little_timer_timeout"]
