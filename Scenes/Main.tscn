@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cdl4gkwb0au58"]
+[gd_scene load_steps=11 format=3 uid="uid://cdl4gkwb0au58"]
 
 [ext_resource type="PackedScene" uid="uid://c41o0je01sgtf" path="res://Scenes/player.tscn" id="1_74p6b"]
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_dums0"]
@@ -8,11 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://li2oo567jcev" path="res://Scenes/Oob.tscn" id="3_wx6rt"]
 [ext_resource type="PackedScene" uid="uid://dk5kstiruxbk3" path="res://Scenes/Ball.tscn" id="4_7lr04"]
 [ext_resource type="PackedScene" uid="uid://7j6b2nfnk8yx" path="res://Scenes/Levels/Level3.tscn" id="4_ct3v1"]
+[ext_resource type="PackedScene" uid="uid://f3bl4ga4cxgm" path="res://Scenes/Levels/Level4.tscn" id="5_knngb"]
 [ext_resource type="PackedScene" uid="uid://dep06dmrlgfmg" path="res://Scenes/Goal.tscn" id="5_vvgwu"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_dums0")
-levelContainer = Array[PackedScene]([null, ExtResource("2_cg4yy"), ExtResource("3_a7p0h"), ExtResource("4_ct3v1"), null, null])
+levelContainer = Array[PackedScene]([null, ExtResource("2_cg4yy"), ExtResource("3_a7p0h"), ExtResource("4_ct3v1"), ExtResource("5_knngb"), null])
 
 [node name="Placeholder" type="Node2D" parent="."]
 process_mode = 1
